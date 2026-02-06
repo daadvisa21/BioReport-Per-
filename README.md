@@ -27,10 +27,15 @@ El código ha sido desarrollado bajo una arquitectura modular, separando la lóg
 El sistema utiliza un ciclo de razonamiento ReAct (Reasoning + Acting) gestionado por LangGraph. El flujo sigue estos pasos:
 
 **Entrada:** El usuario ingresa una consulta en main.py.
+
 **Razonamiento (Agent Node):** El LLM analiza la consulta y decide qué herramienta de tools.py es necesaria.
+
 **Acción (Tool Node):** Se ejecuta la herramienta. Si es una búsqueda, Tavily extrae datos de la web y el LLM los procesa.
+
 **Observación:** El resultado de la herramienta regresa al Agente.
+
 **Ciclo:** El agente evalúa si tiene información suficiente para completar el formato de INFORME. Si falta algo (ej. el nombre científico para buscar amenazas), repite el ciclo.
+
 **Finalización:** Se formatea la respuesta final y se entrega al usuario a través del thread_id (manteniendo memoria de la conversación).
 
 ```mermaid
@@ -45,18 +50,32 @@ graph TD
 
 ## Lógica de Decisión
 Una parte crítica del flujo es la Lógica Condicional en la herramienta de protocolos. No es una simple respuesta de texto; es una bifurcación:
+
 **Condición A:** Si el estado detectado es Peligro, Crítico o Vulnerable -> Ejecuta prompt_critico.
+
 **Condición B (Default):** Para estados de Preocupación Menor o datos insuficientes -> Ejecuta prompt_monitoreo.
 
 ## Instrucciones de Ejecución Local
+
 **1. Obtener el código**
+
 Descargue el proyecto como un archivo ZIP desde el botón verde <> Code en GitHub y extráigalo en su PC.
+
 **2. Instalar las librerías**
+
 Abra su terminal dentro de la carpeta del proyecto y ejecute: pip install -r requirements.txt
+
 **3. Configurar las llaves**
+
 Cree un archivo llamado .env en la carpeta raíz del proyecto y añada sus credenciales de API:
+
 OPENAI_API_KEY=tu_api_key_aquí
+
 TAVILY_API_KEY=tu_api_key_aquí
+
 **4. Iniciar el programa**
+
 Ejecute el script principal para comenzar a interactuar con el agente: python main.py
+
+
 
