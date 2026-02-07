@@ -28,9 +28,9 @@ El sistema utiliza un ciclo de razonamiento ReAct (Reasoning + Acting) gestionad
 
 **Entrada:** El usuario ingresa una consulta en main.py.
 
-**Razonamiento (Agent Node):** El LLM analiza la consulta y decide qué herramienta de tools.py es necesaria.
+**Razonamiento:** El LLM analiza la consulta y decide qué herramienta de tools.py es necesaria.
 
-**Acción (Tool Node):** Se ejecuta la herramienta. Si es una búsqueda, Tavily extrae datos de la web y el LLM los procesa.
+**Acción:** Se ejecuta la herramienta. Si es una búsqueda, Tavily extrae datos de la web y el LLM los procesa.
 
 **Observación:** El resultado de la herramienta regresa al Agente.
 
@@ -40,7 +40,7 @@ El sistema utiliza un ciclo de razonamiento ReAct (Reasoning + Acting) gestionad
 
 ```mermaid
 graph TD
-    A[Usuario: Nombre Común] --> B{Agente/Cerebro}
+    A[Usuario: Nombre Común] --> B{Agente}
     B --> C[Herramienta: Taxonomía]
     C --> D[Herramienta: Búsqueda SERFOR/IUCN]
     D --> E[Herramienta: Análisis de Amenazas]
@@ -76,6 +76,7 @@ TAVILY_API_KEY=tu_api_key_aquí
 **4. Iniciar el programa**
 
 Ejecute el script principal para comenzar a interactuar con el agente: python main.py
+
 
 
 
