@@ -18,7 +18,7 @@ El código ha sido desarrollado bajo una arquitectura modular, separando la lóg
 ## Documentación de Herramientas:
 | Herramienta | Descripción Técnica | Entrada | Salida |
 | :--- | :--- | :--- | :--- |
-| **Identificador Taxonómico** | Valida la identidad biológica usando un LLM como experto. | Nombre común | Nombre científico + Descripción |
+| **Identificador Taxonómico** | Valida la identidad biológica | Nombre común | Nombre científico + Descripción |
 | **Consulta de Conservación** | Búsqueda web filtrando por normativas (SERFOR). | Nombre científico | Categoría de amenaza (VU, EN, etc.) |
 | **Resumidor de Amenazas** | Sintetiza factores de riesgo (minería, deforestación). | Nombre científico | Resumen ejecutivo de amenazas |
 | **Generador de Protocolos** | Lógica condicional para decidir acciones. | Nombre + Estado | Plan de Rescate o Monitoreo |
@@ -76,6 +76,7 @@ TAVILY_API_KEY=tu_api_key_aquí
 **4. Iniciar el programa**
 
 Ejecute el script principal para comenzar a interactuar con el agente: python main.py
+
 
 
 
