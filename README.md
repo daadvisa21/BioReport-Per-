@@ -1,5 +1,5 @@
 
-## Asistente de Vigilancia Biológica (Perú) 🐾
+## Asistente Biológico (Perú) 🐾
 BioReport Perú es un agente inteligente que utiliza Inteligencia Artificial y búsquedas en tiempo real para generar informes técnicos de conservación sobre especies de la fauna peruana. El sistema integra validación taxonómica, consulta de estados de amenaza (SERFOR/IUCN) y generación de protocolos biológicos.
 
 ## Estructura del Proyecto
@@ -76,6 +76,7 @@ TAVILY_API_KEY=tu_api_key_aquí
 **4. Iniciar el programa**
 
 Ejecute el script principal para comenzar a interactuar con el agente: python main.py
+
 
 
 
